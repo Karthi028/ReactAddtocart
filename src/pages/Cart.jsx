@@ -49,7 +49,7 @@ const Cart = ({ cart, setcart }) => {
     })
 
     return <div className="ml-[20%] mr-[20%] mt-2 shadow-2xl mb-2 rounded-2xl flex flex-col">
-        <h1 className="text-center font-semibold p-2"><span className="text-red-400 text-xl">C</span>artItems</h1>
+        <h1 className="text-center font-semibold p-2 text-xl"><span className="text-red-400 text-2xl">C</span>artItems</h1>
         <div className="mb-5">{carts}</div>
         <div className="text-center shadow-2xl p-2 w-[60%] mx-auto rounded-2xl font-semibold mb-5">
             <span className="text-red-400">T</span>otal Price:
