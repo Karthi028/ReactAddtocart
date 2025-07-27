@@ -20,29 +20,29 @@ const Cart = ({ cart, setcart }) => {
             }
         });
         setcart(updatecart);
-        
+
     };
 
-    const totalPrice = cart.reduce((previous,current)=>{ return previous + current.price *current.quantity},0);
+    const totalPrice = cart.reduce((previous, current) => { return previous + current.price * current.quantity }, 0);
     const DicountedPrice = totalPrice.toFixed(2);
     console.log(DicountedPrice);
 
     const carts = cart.map((car) => {
 
-
         return <div className="flex  flex-col md:flex-row items-center justify-between gap-3 mt-3" key={car.id}>
             <div className="flex flex-row gap-1 sm:gap-10 items-center justify-around">
-            <img className="size-[35%] sm:h-40 sm:w-40 p-2 md:p-5 shadow-xl sm:ml-3 rounded-2xl" src={car.image} />
-            <div className="mr-5 sm:mr-0 w-[30%] sm:w-[80%] flex flex-col items-start gap-1">
-                <p className="text-wrap text-xs sm:text-sm md:text-lg">{car.title}</p>
-                <p className="text-lg">${car.price*car.quantity}</p>
-                <p className="text-sm mt-2">Count:<span className="text-red-400 font-semibold">{car.quantity}</span></p>
-                <div>
-                    <button className="rounded-xl border p-1" onClick={() => setcount(car.id, -1)}>-</button>
-                    <span> </span>
-                    <button className="rounded-xl border p-1" onClick={() => setcount(car.id, 1)}>+</button>
+                <img className="size-[35%] sm:h-40 sm:w-40 p-2 md:p-5 shadow-xl sm:ml-3 rounded-2xl" src={car.image} />
+                <div className="mr-5 sm:mr-0 w-[30%] sm:w-[80%] flex flex-col items-start gap-1">
+                    <p className="text-wrap text-xs sm:text-sm md:text-lg">{car.title}</p>
+                    <p className="text-xs italic">Price: ${car.price}</p>
+                    <p className="text-lg">Total Price: $<span className="font-semibold">{car.price * car.quantity}</span></p>
+                    <p className="text-sm mt-2">Count:<span className="text-red-400 font-semibold">{car.quantity}</span></p>
+                    <div>
+                        <button className="rounded-xl border p-1" onClick={() => setcount(car.id, -1)}>-</button>
+                        <span> </span>
+                        <button className="rounded-xl border p-1" onClick={() => setcount(car.id, 1)}>+</button>
+                    </div>
                 </div>
-            </div>
             </div>
             <button className="rounded-2xl border p-1 md:p-2 md:mr-[5%] w-[80%] md:w-auto mb-3 border-red-300" onClick={() => remover(car.id)}>Remove</button>
         </div>
@@ -52,8 +52,8 @@ const Cart = ({ cart, setcart }) => {
         <h1 className="text-center font-semibold p-2"><span className="text-red-400 text-xl">C</span>artItems</h1>
         <div className="mb-5">{carts}</div>
         <div className="text-center shadow-2xl p-2 w-[60%] mx-auto rounded-2xl font-semibold mb-5">
-            <span className="text-red-400">T</span>otal Price: 
-            <span className="text-xl text-red-400 p-0.5 shadow-2xl rounded-2xl">${DicountedPrice}</span> 
+            <span className="text-red-400">T</span>otal Price:
+            <span className="text-xl text-red-400 p-0.5 shadow-2xl rounded-2xl">${DicountedPrice}</span>
             <span className="text-xs">(10% Discounted)</span></div>
     </div>
 
