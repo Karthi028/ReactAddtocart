@@ -11,7 +11,8 @@ const Home = ({cart,setcart}) => {
   const hero = item.map((item) => {
     return <div key={item.id} className="w-50 p-4 rounded-2xl flex flex-col gap-3 justify-around shadow-2xl bg-white">
       <img className="size-40" src={item.image}></img>
-      <p className="text-sm">{item.title}</p>
+      <p className="text-sm font-semibold">{item.title}</p>
+      <p className="text-[10px]"><span className="font-semibold">Product Disc:</span> {item.description}</p>
       <p className="text-sm">${item.price}</p>
 
       <button className=" p-1 rounded-2xl text-sm shadow-xl border border-red-300" onClick={() => {

@@ -30,13 +30,12 @@ const Cart = ({ cart, setcart }) => {
     const carts = cart.map((car) => {
 
 
-        return <div className="flex  flex-col md:flex-row items-center justify-around gap-3"><div className="flex flex-row gap-10 items-center justify-around mt-3" key={car.id}>
-           
-
-            <img className="size-[36%] md:size-[40%] p-2" src={car.image} />
-            <div className="w-[80%] flex flex-col items-start gap-1">
-                <p className="text-wrap text-sm">{car.title}</p>
-                <p className="text-sm">${car.price*car.quantity}</p>
+        return <div className="flex  flex-col md:flex-row items-center justify-between gap-3 mt-3" key={car.id}>
+            <div className="flex flex-row gap-1 sm:gap-10 items-center justify-around">
+            <img className="size-[35%] sm:h-40 sm:w-40 p-2 md:p-5 shadow-xl sm:ml-3 rounded-2xl" src={car.image} />
+            <div className="mr-5 sm:mr-0 w-[30%] sm:w-[80%] flex flex-col items-start gap-1">
+                <p className="text-wrap text-xs sm:text-sm md:text-lg">{car.title}</p>
+                <p className="text-lg">${car.price*car.quantity}</p>
                 <p className="text-sm mt-2">Count:<span className="text-red-400 font-semibold">{car.quantity}</span></p>
                 <div>
                     <button className="rounded-xl border p-1" onClick={() => setcount(car.id, -1)}>-</button>
